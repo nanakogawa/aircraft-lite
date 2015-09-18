@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <title>Aircraft Lite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="default.css">
+  </head>
+  <body>
+    <center>
+      <div class="cover-background">
+        <nav class="navbar navbar-trans">
+          <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+              </button>
+              <a class="navbar-brand" href="#">Aircraft Lite</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" class="navbar-tab">Airfare</a></li>
+                <li><a href="#" class="navbar-tab">Support</a></li>
+                <li><a href="#" class="navbar-tab">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="cover-title">
+            <div class="col-md-12">
+              <h2>Flight with Leisure</h2>
+            </div>
+          </div>
+        </div>
+        <!---------- form starts ---------->
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="flight-way">
+                <div class="col-lg-3 col-md-12">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="round-trip">Round Trip</button>
+                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="one-way">One Way</button>
+                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="multi-city">Multi-City</button>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-control" id="flight-class">
+                    <option value="economic">Economic Class</option>
+                    <option value="premium">Premium Class</option>
+                    <option value="business">Business Class</option>
+                    <option value="first-class">First Class</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group form-inline">
+                  <label for="adult">Adult (18+)</label>
+                  <select class="form-control" id="adult">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group form-inline">
+                  <label for="child">Child (0-17)</label>
+                  <select class="form-control" id="child">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <label for="flying-from">Flying From</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
+                  <input type="email" class="form-control" id="flying-from" placeholder="City or Location">
+                </div>
+              </div>
+              <div class="col-lg-3 col-md 6">
+                <label for="flying-to">Flying To</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
+                  <input type="email" class="form-control" id="flying-to" placeholder="City or Location">
+                </div>
+              </div>
+              <div class="col-md-3 col-md-6">
+                <label for="departing">Departing</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
+                  <input type="email" class="form-control" id="departing" placeholder="MM/DD/YYYY">
+                </div>
+              </div>
+              <div class="col-md-3 col-md-6">
+                <label for="returning">Returning</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
+                  <input type="email" class="form-control" id="returning" placeholder="MM/DD/YYYY">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-m-12">
+                <button type="submit" class="btn btn-default" id="flight-search">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!---------- form ends ---------->
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </center>
+  </body>
+</html>
