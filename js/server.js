@@ -10,7 +10,7 @@
  app.use(express.static(__dirname + '/../css'));
  app.use(express.static(__dirname + '/../fonts'));
  app.use(express.static(__dirname + '/../images'));
- app.use('/api', require('./routes/api.js'));
+ app.use('/api', require('./api.js'));
 
  app.get('/', function(req, res) {
  	res.sendFile(path.join(__dirname + '/../html/index.html'));
