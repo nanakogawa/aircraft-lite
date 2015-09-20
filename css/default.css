@@ -15,12 +15,17 @@ body {
 }
 
 a:hover {
-  color: #ffffff;
+  color: rgb(192, 192, 192);
+}
+
+.cover {
+ width: 100%;
 }
 
 .cover-background {
  width: 100%;
- height: 800px;
+ height: 100%;
+ padding: 0 0 50px 0;
  background: linear-gradient(to bottom, rgb(149, 70, 255), rgb(0, 244, 255) 100%);
  box-shadow: none;
 }
@@ -31,6 +36,10 @@ a:hover {
 
 .navbar-brand {
   font-size: 22px;
+}
+
+.plane-logo {
+  height: 22px;
 }
 
 .navbar-tab {
@@ -47,6 +56,10 @@ a:hover {
  color: #fff;
 }
 
+.plane-button {
+  float: left;
+}
+
 .cover-title {
   color: #fff;
   margin: -38px 0 0 0;
@@ -59,13 +72,20 @@ a:hover {
 form {
   color: #fff;
   width: 96%;
-  position: relative;
+  height: 100%;
   z-index: 100;
-  padding: 20px;
+  padding: 0 0 13px 0;
   background: rgba(255, 255, 255, 0.07);
 }
 
+h4 {
+  font-weight: bold;
+  font-family: helvetica-neue-thin, sans-serif;
+}
+
 .flight-way-btn {
+  width: 70px;
+  padding: 6px 0 6px 0;
   margin: 11px 0 0 0;
 }
 
@@ -74,28 +94,73 @@ label {
 }
 
 #flight-class {
-  width: 160px;
-  margin: 10px 0;
+  width: 140px;
+  margin: 10px 0 0 0;
 }
 
 #flying-from,
 #flying-to {
-  width: 250px;
+  width: 120px;
 }
 
 #adult,
 #child {
-  width: 60px;
+  width: 55px;
   margin: 5px 0;
 }
 
 #departing,
 #returning {
-  width: 200px;
+  width: 130px;
 }
 
 #flight-search {
   width: 100px;
-  margin: 15px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
+.pd-grid {
+  width: 100%;
+}
+
+.pd-title,
+.pd-title.h2 {
+  font-family: helvetica-neue-thin, sans-serif;
+  text-align: left;
+  color: #515151;
+}
+
+.sf1 {
+  height: 230px;
+  background-color: #0000FF;
+  color: #fff;
+  margin: 0;
+}
+
+.sf2 {
+  height: 230px;
+  background-color: #d9b0ff;
+  color: #fff;
+  margin: 0;
+}
+
+.sf3 {
+  height: 230px;
+  background-color: #58ff62;
+  color: #fff;
+  margin: 0;
+}
+
+.sf4 {
+  height: 230px;
+  background-color: #ff3245;
+  color: #fff;
+  margin: 0;
+}
+
+
+@media (max-width: 420px) {
+  form {
+    width: 100%;
+  }
+}

@@ -2,14 +2,17 @@
 <html lang="en">
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Aircraft Lite</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="animate.css">
   </head>
   <body>
     <center>
-      <div class="cover-background">
+      <div class="cover-background ">
         <nav class="navbar navbar-trans">
           <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,7 +20,10 @@
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="glyphicon glyphicon-menu-hamburger"></span>
               </button>
-              <a class="navbar-brand" href="#">Aircraft Lite</a>
+              <button type="button" class="navbar-toggle collapsed plane-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                <img src="plane-logo.png" class="plane-logo" />
+              </button>
+              <a class="navbar-brand collapse navbar-collapse id='bs-example-navbar-collapse-2'" href="#">Aircraft Lite</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,28 +45,30 @@
         <!--form starts -->
         <form>
           <div class="container">
+            <div class="col-md-12">
+              <h4>Search Flights</h4>
+            </div>
             <div class="row">
-              <div class="flight-way">
-                <div class="col-lg-3 col-md-12">
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="round-trip">Round Trip</button>
-                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="one-way">One Way</button>
-                    <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="multi-city">Multi-City</button>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <select class="form-control" id="flight-class">
-                    <option value="economic">Economic Class</option>
-                    <option value="premium">Premium Class</option>
-                    <option value="business">Business Class</option>
-                    <option value="first-class">First Class</option>
-                  </select>
+              <div class="col-md-3">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="round-trip">Round Trip</button>
+                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="one-way">One Way</button>
+                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="multi-city">Multi-City</button>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <select class="form-control" id="flight-class">
+                  <option value="economic">Economic Class</option>
+                  <option value="premium">Premium Class</option>
+                  <option value="business">Business Class</option>
+                  <option value="first-class">First Class</option>
+                </select>
+              </div>
+              <div class="col-xs-6 col-sm-3">
                 <div class="form-group form-inline">
                   <label for="adult">Adult (18+)</label>
                   <select class="form-control" id="adult">
+                    <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -70,10 +78,11 @@
                   </select>
                 </div>
               </div>
-              <div class="col-lg-2">
+              <div class="col-xs-6 col-sm-3">
                 <div class="form-group form-inline">
                   <label for="child">Child (0-17)</label>
                   <select class="form-control" id="child">
+                    <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -85,32 +94,40 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-3 col-md-6">
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
                 <label for="flying-from">Flying From</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
-                  <input type="email" class="form-control" id="flying-from" placeholder="City or Location">
+                  <input type="email" class="form-control" id="flying-from" placeholder="Airport">
+                </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md 6">
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
                 <label for="flying-to">Flying To</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
-                  <input type="email" class="form-control" id="flying-to" placeholder="City or Location">
+                  <input type="email" class="form-control" id="flying-to" placeholder="Airport">
+                </div>
                 </div>
               </div>
-              <div class="col-md-3 col-md-6">
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
                 <label for="departing">Departing</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
-                  <input type="email" class="form-control" id="departing" placeholder="MM/DD/YYYY">
+                  <input type="email" class="form-control" id="departing" placeholder="YYYY-MM-DD">
+                </div>
                 </div>
               </div>
-              <div class="col-md-3 col-md-6">
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
                 <label for="returning">Returning</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
-                  <input type="email" class="form-control" id="returning" placeholder="MM/DD/YYYY">
+                  <input type="email" class="form-control" id="returning" placeholder="YYYY-MM-DD">
+                </div>
                 </div>
               </div>
             </div>
@@ -122,9 +139,46 @@
           </div>
         </form>
         <!-- form ends -->
+      </div> <!-- gradient background end -->
+      <div class="container">
+        <div class="pd-title">
+          <div class="row">
+            <h2>Popular Destinations</h2>
+          </div>
+        </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <div class="container pd-grid">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 sf1">
+            sf
+          </div>
+          <div class="col-md-3 col-sm-3 sf2">
+            sf
+          </div>
+          <div class="col-md-4 col-sm-3 sf3">
+            sf
+          </div>
+          <div class="col-md-2 col-sm-3 sf4">
+            sf
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 sf4">
+            sf
+          </div>
+          <div class="col-md-3 col-sm-3 sf3">
+            sf
+          </div>
+          <div class="col-md-3 col-sm-3 sf4">
+            sf
+          </div>
+          <div class="col-md-4 col-sm-3 sf1">
+            sf
+          </div>
+        </div>
+      </div>
     </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
