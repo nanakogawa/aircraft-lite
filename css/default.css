@@ -83,14 +83,16 @@ h4 {
   font-family: helvetica-neue-thin, sans-serif;
 }
 
+label {
+  font-size: 12px;
+  font-family: helvetica-neue-thin, sans-serif;
+  font-weight: bolder;
+}
+
 .flight-way-btn {
   width: 70px;
   padding: 6px 0 6px 0;
   margin: 11px 0 0 0;
-}
-
-label {
-  font-size: 12px;
 }
 
 #flight-class {
@@ -119,6 +121,44 @@ label {
   margin: 5px 0 0 0;
 }
 
+/*-- flight cards --*/
+
+.flight-card-grid {
+  width: 100%;
+}
+
+.flight-cards {
+  display: none;
+}
+
+.flight-card {
+  margin: 23px 0 0 0;
+}
+
+.image {
+  height: 30px;
+  padding: 5px 0 !important;
+}
+
+.description {
+  font-size: 15px;
+}
+
+.header {
+  font-family: helvetica-neue-thin, sans-serif !important;
+  padding: 15px 0 0 0;
+}
+
+.price {
+  margin: 0 0 20px 0;
+}
+
+.book-button {
+  width: 80px;
+}
+
+/*-- Popular Destinations --*/
+
 .pd-grid {
   width: 100%;
 }
@@ -128,39 +168,72 @@ label {
   font-family: helvetica-neue-thin, sans-serif;
   text-align: left;
   color: #515151;
+  margin: 0 0 10px 0;
 }
 
-.sf1 {
-  height: 230px;
-  background-color: #0000FF;
-  color: #fff;
+.pop-des {
+  background: url('paris.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  color: #000;
   margin: 0;
+  padding: 0;
 }
 
-.sf2 {
-  height: 230px;
-  background-color: #d9b0ff;
+.des-image {
   color: #fff;
-  margin: 0;
+  z-index: 0;
+  height: 32px;
+  background: rgb(37, 37, 37);
+  opacity: 0.8;
+  position: relative;
+  text-align: left;
+  top: 87%;
 }
 
-.sf3 {
-  height: 230px;
-  background-color: #58ff62;
-  color: #fff;
-  margin: 0;
+.location {
+  z-index: 100;
+  position: absolute;
+  padding: 5px 15px;
 }
 
-.sf4 {
-  height: 230px;
-  background-color: #ff3245;
-  color: #fff;
-  margin: 0;
+.cost {
+  z-index: 100;
+  float: right !important;
+  padding: 5px 15px;
+  position: relative;
 }
 
+@media (max-width: 767px) {
+  .flight-card {
+    margin: 20px 0 0 200px;
+  }
+}
+
+@media (max-width: 650px) {
+  .flight-card {
+    margin: 20px 0 0 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .flight-card {
+    margin: 20px 0 0 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flight-card {
+    margin: 20px 0 0 70px;
+  }
+}
 
 @media (max-width: 420px) {
   form {
     width: 100%;
+  }
+  .flight-card {
+    margin: 20px 0 0 30px;
   }
 }
