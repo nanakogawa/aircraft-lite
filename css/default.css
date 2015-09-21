@@ -89,24 +89,24 @@ label {
   font-weight: bolder;
 }
 
-.flight-way-btn {
-  width: 70px;
+#flightWay {
+  width: 140px;
   padding: 6px 0 6px 0;
   margin: 11px 0 0 0;
 }
 
-#flight-class {
+#flightClass {
   width: 140px;
   margin: 10px 0 0 0;
 }
 
-#flying-from,
-#flying-to {
+#flyingFrom,
+#flyingTo {
   width: 120px;
 }
 
-#adult,
-#child {
+#selectAdult,
+#selectChild {
   width: 55px;
   margin: 5px 0;
 }
@@ -203,6 +203,21 @@ label {
   float: right !important;
   padding: 5px 15px;
   position: relative;
+}
+
+.vaycay {
+  width: 100%;
+  height: 200px;
+}
+
+.footer {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to right, rgb(149, 70, 255), rgb(0, 244, 255) 100%);
+}
+
+.footer-logo {
+  padding: 75px 0 0 0;
 }
 
 @media (max-width: 767px) {

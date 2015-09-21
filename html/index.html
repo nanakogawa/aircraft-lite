@@ -44,21 +44,21 @@
           </div>
         </div>
         <!--form starts -->
-        <form>
+        <form id="search-form">
           <div class="container">
             <div class="col-md-12">
               <h4>Search Flights</h4>
             </div>
             <div class="row">
-              <div class="col-md-3">
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="round-trip">Round Trip</button>
-                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="one-way">One Way</button>
-                  <button type="button" class="btn btn-default flight-way-btn" name="flight-option" id="multi-city">Multi-City</button>
-                </div>
+              <div class="col-sm-6 col-sm-3">
+                <select class="form-control" id="flightWay">
+                  <option value="round-trip">Round Trip</option>
+                  <option value="one-way">One Way</option>
+                  <option value="multi-city">Multi-City</option>
+                </select>
               </div>
-              <div class="col-md-3">
-                <select class="form-control" id="flight-class">
+              <div class="col-sm-6 col-sm-3">
+                <select class="form-control" id="flightClass">
                   <option value="economic">Economic Class</option>
                   <option value="premium">Premium Class</option>
                   <option value="business">Business Class</option>
@@ -67,8 +67,8 @@
               </div>
               <div class="col-xs-6 col-sm-3">
                 <div class="form-group form-inline">
-                  <label for="adult">Adult (18+)</label>
-                  <select class="form-control" id="adult">
+                  <label for="selectAdult">Adult (18+)</label>
+                  <select class="form-control" id="selectAdult">
                     <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -81,8 +81,8 @@
               </div>
               <div class="col-xs-6 col-sm-3">
                 <div class="form-group form-inline">
-                  <label for="child">Child (0-17)</label>
-                  <select class="form-control" id="child">
+                  <label for="selectChild">Child (0-17)</label>
+                  <select class="form-control" id="selectChild">
                     <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -97,19 +97,19 @@
             <div class="row">
               <div class="col-xs-6 col-sm-3">
               <div class="form-group form-inline">
-                <label for="flying-from">Flying From</label>
+                <label for="flyingFrom">Flying From</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
-                  <input type="email" class="form-control" id="flying-from" placeholder="Airport">
+                  <input type="email" class="form-control" id="flyingFrom" placeholder="Airport">
                 </div>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-3">
               <div class="form-group form-inline">
-                <label for="flying-to">Flying To</label>
+                <label for="flyingTo">Flying To</label>
                 <div class="input-group">
                   <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
-                  <input type="email" class="form-control" id="flying-to" placeholder="Airport">
+                  <input type="email" class="form-control" id="flyingTo" placeholder="Airport">
                 </div>
                 </div>
               </div>
@@ -355,6 +355,12 @@
         </div>
       </div>
       <div id="content"></div>
+      <div class="vaycay"></div>
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="plane-logo.png" class="plane-logo" />
+        </div>
+      </div>
     </center>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
