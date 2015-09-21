@@ -1,7 +1,8 @@
  // Dependencies
  var request = require('request'),
      express = require('express'),
-     path = require('path');
+     path = require('path'),
+     google = require('./google.js');
 
  // Express
  var app = express();
@@ -10,10 +11,15 @@
  app.use(express.static(__dirname + '/../css'));
  app.use(express.static(__dirname + '/../fonts'));
  app.use(express.static(__dirname + '/../images'));
- app.use('/api', require('./api.js'));
+ app.use(express.static(__dirname + '/../js'));
+ app.use('/google', google.api);
 
  app.get('/', function(req, res) {
  	res.sendFile(path.join(__dirname + '/../html/index.html'));
+ });
+
+ app.get('destinations.json', function(req, res) {
+  res.sendFile(path.join(__dirname + '/destinations.json'));
  });
 
  // Start Server
