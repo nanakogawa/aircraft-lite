@@ -172,21 +172,17 @@ label {
 }
 
 .pop-des {
-  background: url('paris.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 250px;
   color: #000;
   margin: 0;
   padding: 0;
 }
 
-.des-image {
+.des-opacity {
   color: #fff;
   z-index: 0;
   height: 32px;
-  background: rgb(37, 37, 37);
-  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.67);
   position: relative;
   text-align: left;
   top: 87%;
@@ -202,13 +198,12 @@ label {
   z-index: 100;
   float: right !important;
   padding: 5px 15px;
-  position: relative;
 }
 
-.vaycay {
-  width: 100%;
-  height: 200px;
-}
+/*.vaycay {*/
+  /*width: 100%;*/
+  /*height: 100px;*/
+/*}*/
 
 .footer {
   width: 100%;

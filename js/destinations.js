@@ -6,21 +6,22 @@
     if((popularDes.status === 200) || (popularDes.status === 304)) {
      var desInfo = JSON.parse(popularDes.responseText);
 
-     var desLocation = document.getElementsByClassName('location');
-     var desPrice = document.getElementsByClassName('cost');
+     var desArray = desInfo.destinations;
 
-     for(var l = 0; l < desLocation.length; l++) {
+     for(var l = 0; l < desArray.length; l++) {
 
-      var newContent = '';
-       newContent += desInfo.destinations[l].location;
-      var newPrice = '';
-       newPrice += desInfo.destinations[l].minPrice;
+      var desLocation = document.getElementsByClassName('location');
+      var newLocation = desArray[l].location;
+      desLocation[l].innerHTML = newLocation;
 
-		 }
-		 for (var i = 0; i < desLocation.length; i++) {
+      var desPrice = document.getElementsByClassName('cost');
+      var newPrice = desArray[l].minPrice;
+      desPrice[l].innerHTML = '$' + newPrice +'+';
 
-		  desLocation[i].innerHTML = newContent;
-		  desPrice[i].innerHTML = '$' + newPrice +'+';
+      var desImage = document.getElementsByClassName('pop-des');
+      var newImage = desArray[l].image;
+      desImage[l].style.background = 'url("' + newImage + '")';
+      desImage[l].style.backgroundSize = 'cover';
 
 		 }
 	  }

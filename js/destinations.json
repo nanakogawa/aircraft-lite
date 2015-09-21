@@ -1,0 +1,68 @@
+{
+  "destinations": [
+    {
+      "location": "San Francisco, US",
+      "airport": "SFO",
+      "minPrice": "125",
+      "maxPrice": "617",
+      "duration": "1h 20min",
+      "image": "sf.jpg"
+    },
+    {
+      "location": "Bangkok, Thailand",
+      "airport": "BKK",
+      "minPrice": "579",
+      "maxPrice": "21748",
+      "duration": "21h 20min",
+      "image": "bangkok.jpg"
+    },
+    {
+      "location": "New York City, US",
+      "airport": "EWR",
+      "minPrice": "298",
+      "maxPrice": "904",
+      "duration": "8h 32min",
+      "image": "nyc.jpg"
+    },
+    {
+      "location": "London, UK",
+      "airport": "LHR",
+      "minPrice": "813",
+      "maxPrice": "8755",
+      "duration": "10h 20min",
+      "image": "london.jpg"
+    },
+    {
+      "location": "Barcelona, Spain",
+      "airport": "BCN",
+      "minPrice": "720",
+      "maxPrice": "13729",
+      "duration": "20h 40min",
+      "image": "barcelona.jpg"
+    },
+    {
+      "location": "Tokyo, Japan",
+      "airport": "NRT",
+      "minPrice": "555",
+      "maxPrice": "8757",
+      "duration": "11h 45min",
+      "image": "tokyo.jpg"
+    },
+    {
+      "location": "Paris, France",
+      "airport": "CDG",
+      "minPrice": "700",
+      "maxPrice": "10817",
+      "duration": "17h 5min",
+      "image": "paris.jpg"
+    },
+    {
+      "location": "Rome, Italy",
+      "airport": "FCO",
+      "minPrice": "771",
+      "maxPrice": "16399",
+      "duration": "18h 50min",
+      "image": "rome.jpg"
+    }
+  ]
+}
