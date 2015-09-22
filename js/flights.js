@@ -5,14 +5,29 @@
  }
 
  function submit (event) {
- event.preventDefault();
+  event.preventDefault();
   var submitRequest = new XMLHttpRequest();
-   submitRequest.open('POST','/form',true);
-   submitRequest.setRequestHeader('content-type', 'application/json');
-   submitRequest.send(formSubmit());
-   //submitRequest.addEventListener('load',function () {
-   //console.log(formSubmit.responseText);
-  //});
+  submitRequest.open('POST','/qpx/form',true);
+  submitRequest.setRequestHeader('content-type', 'application/json');
+  submitRequest.send(formSubmit());
+  submitRequest.addEventListener('load',function () {
+
+   if((submitRequest.status === 200) || (submitRequest.status === 304)) {
+
+    var flights = JSON.parse(submitRequest.responseText);
+    var trips = flights.body.trips;
+    var flightCards = document.getElementsByClassName('flight-cards');
+
+    for(var c = 0; c < flightCards.length; c++) {
+
+     var airToAir = document.getElementsByClassName('air-to-air');
+     var airOrigin = trips[c].data.airport[0].city;
+     var airDestination = trips[c].data.airport[0].city;
+     airToAir[c].innerHTML = airOrigin + ' to ' + airDestination;
+
+    }
+   }
+  });
  }
 
  function formSubmit() {
