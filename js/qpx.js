@@ -23,10 +23,7 @@
      "passengers":
       {
        "adultCount": 1,
-       "infantInLapCount": 0,
-       "infantInSeatCount": 0,
-       "childCount": 0,
-       "seniorCount": 0
+       "childCount": 0
      },
        "solutions": 1,
        "refundable": false
@@ -34,25 +31,18 @@
  };
 
  qpx.post('/form', jsonParser, function(req, res) {
-  search.request.slice[0].origin = req.flyingTo;
-  search.request.slice[0].destination = req.flyingFrom;
-  search.request.slice[0].date = req.departing;
-  search.request.passengers.adultCount = req.selectAdult;
-  search.request.passengers.childCount = req.selectChild;
-   //console.log(JSON.stringify(req.body));
-   //res.send(req.body);
- });
-
- // Routes
- qpx.get('/list', function(req, res) {
+  search.request.slice[0].origin = req.body.flyingFrom;
+  search.request.slice[0].destination = req.body.flyingTo;
+  search.request.slice[0].date = req.body.departing;
   request({
    method: 'POST',
    url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?' +
-    'key=AIzaSyCww-Th87gchTpUwFDuZfgte6HtuY9LPVM',
+    'key=AIzaSyAlqfXUkrgIw6JvIrTtezz3zozHPJMwscc',
    json: true,
    body: search
   }, function(error, data) {
    if(error) {
+    console.log('error was found');
     res.send(error);
    }
    else {

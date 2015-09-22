@@ -7,7 +7,6 @@
  // Express
  var app = express();
 
- // Routes
  app.use(express.static(__dirname + '/../css'));
  app.use(express.static(__dirname + '/../fonts'));
  app.use(express.static(__dirname + '/../images'));
