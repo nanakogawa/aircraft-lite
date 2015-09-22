@@ -7,7 +7,7 @@
  function submit (event) {
  event.preventDefault();
   var submitRequest = new XMLHttpRequest();
-   submitRequest.open('GET','/form',true);
+   //submitRequest.open('GET','/form',true);
    submitRequest.open('POST','/form',true);
    submitRequest.setRequestHeader('content-type', 'application/json');
    submitRequest.send(formSubmit());
