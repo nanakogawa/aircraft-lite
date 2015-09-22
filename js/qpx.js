@@ -1,6 +1,10 @@
  // Dependencies
  var express = require('express'),
-     request = require('request');
+   request = require('request'),
+   bodyParser = require('body-parser');
+
+ // Body Parser
+ var jsonParser = bodyParser.json();
 
  // Express
  var qpx = express.Router();
@@ -24,10 +28,20 @@
        "childCount": 0,
        "seniorCount": 0
      },
-       "solutions": 5,
+       "solutions": 1,
        "refundable": false
    }
  };
+
+ qpx.post('/form', jsonParser, function(req, res) {
+  search.request.slice[0].origin = req.flyingTo;
+  search.request.slice[0].destination = req.flyingFrom;
+  search.request.slice[0].date = req.departing;
+  search.request.passengers.adultCount = req.selectAdult;
+  search.request.passengers.childCount = req.selectChild;
+   //console.log(JSON.stringify(req.body));
+   //res.send(req.body);
+ });
 
  // Routes
  qpx.get('/list', function(req, res) {
@@ -38,7 +52,12 @@
    json: true,
    body: search
   }, function(error, data) {
+   if(error) {
+    res.send(error);
+   }
+   else {
    res.send(data);
+   }
   });
  });
 
