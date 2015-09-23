@@ -25,7 +25,7 @@
        "adultCount": 1,
        "childCount": 0
      },
-       "solutions": 1,
+       "solutions": 5,
        "refundable": false
    }
  };
@@ -37,7 +37,7 @@
   request({
    method: 'POST',
    url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?' +
-    'key=AIzaSyAlqfXUkrgIw6JvIrTtezz3zozHPJMwscc',
+    'key=AIzaSyAMqgi66zCtweGKkvcgzDTNEc2cT1PWbsg',
    json: true,
    body: search
   }, function(error, data) {

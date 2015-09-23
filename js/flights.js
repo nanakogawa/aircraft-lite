@@ -14,17 +14,23 @@
 
    if((submitRequest.status === 200) || (submitRequest.status === 304)) {
 
-    console.log(submitRequest.responseText);
     var flights = JSON.parse(submitRequest.responseText);
-    var trips = flights.body.trips;
-    var flightCards = document.getElementsByClassName('flight-cards');
+    var flightCard = flights.body.trips.tripOption;
 
-    for(var c = 0; c < flightCards.length; c++) {
+
+    for(var c = 0; c < flightCard.length; c++) {
+     console.log(flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].origin, ' to ',
+      flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].destination);
 
      var airToAir = document.getElementsByClassName('air-to-air');
-     var airOrigin = trips[c].data.airport[1].city;
-     var airDestination = trips[c].data.airport[0].city;
+     var airOrigin = flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].origin;
+     var airDestination = flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].destination;
      airToAir[c].innerHTML = airOrigin + ' to ' + airDestination;
+     airToAir[1].innerHTML = airOrigin + ' to ' + airDestination;
+     airToAir[2].innerHTML = airOrigin + ' to ' + airDestination;
+     airToAir[3].innerHTML = airOrigin + ' to ' + airDestination;
+     airToAir[4].innerHTML = airOrigin + ' to ' + airDestination;
+
 
     }
    }

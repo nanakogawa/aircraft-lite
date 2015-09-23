@@ -4,8 +4,8 @@
 
    popularDes.onload = function() {
     if((popularDes.status === 200) || (popularDes.status === 304)) {
-     var desInfo = JSON.parse(popularDes.responseText);
 
+     var desInfo = JSON.parse(popularDes.responseText);
      var desArray = desInfo.destinations;
 
      for(var l = 0; l < desArray.length; l++) {
