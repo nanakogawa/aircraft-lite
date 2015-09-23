@@ -15,21 +15,17 @@
    if((submitRequest.status === 200) || (submitRequest.status === 304)) {
 
     var flights = JSON.parse(submitRequest.responseText);
-    var flightCard = flights.body.trips.tripOption;
-
+    var flightCard = document.getElementsByClassName('flight-card');
 
     for(var c = 0; c < flightCard.length; c++) {
-     console.log(flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].origin, ' to ',
-      flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].destination);
+
+     console.log(flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].origin, ' to ',
+      flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].destination);
 
      var airToAir = document.getElementsByClassName('air-to-air');
-     var airOrigin = flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].origin;
-     var airDestination = flights.body.trips.tripOption[c].slice[c].segment[c].leg[c].destination;
+     var airOrigin = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].origin;
+     var airDestination = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].destination;
      airToAir[c].innerHTML = airOrigin + ' to ' + airDestination;
-     airToAir[1].innerHTML = airOrigin + ' to ' + airDestination;
-     airToAir[2].innerHTML = airOrigin + ' to ' + airDestination;
-     airToAir[3].innerHTML = airOrigin + ' to ' + airDestination;
-     airToAir[4].innerHTML = airOrigin + ' to ' + airDestination;
 
 
     }
