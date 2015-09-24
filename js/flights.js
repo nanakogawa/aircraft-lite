@@ -4,7 +4,40 @@
  	flightCards.style.display = 'block';
  }
 
- function submit (event) {
+ function setRoute(flight, cardNumber) {
+  var airToAir = document.getElementsByClassName('air-to-air');
+  var origin = flight.origin;
+  var destination = flight.destination;
+  airToAir[cardNumber].textContent = origin + ' to ' + destination;
+ }
+
+ function setCarrier(flight, cardNumber) {
+  var airCarrier = document.getElementsByClassName('air-carrier');
+  var carrierName = flight.carrier;
+  var airObj = {VX: 'Virgin America', UA: 'United Airlines'};
+  var Obj = new RegExp(Object.keys(airObj).join('|'),'gi');
+  airCarrier[cardNumber].textContent = carrierName.replace(Obj, function(matched) {
+   return airObj[matched];
+  });
+ }
+
+ function setPrice(flight, cardNumber) {
+  var airPrice = document.getElementsByClassName('price');
+  var price = flight.saleFareTotal.substring(3,6);
+  var header = document.createElement('h1');
+  airPrice[cardNumber].appendChild(header);
+  airPrice[cardNumber].textContent ='$' + price;
+  airPrice[cardNumber].style.margin = ' 0 0 20px 0';
+ }
+
+ function setTime(flight, cardNumber) {
+  var airTime = document.getElementsByClassName('air-time');
+  var departureTime = flight.departureTime;
+  var arrivalTime = flight.arrivalTime;
+  airTime[cardNumber].textContent = departureTime.substring(11,16)+ ' - ' + arrivalTime.substring(11,16);
+ }
+
+ function searchData (event) {
   event.preventDefault();
   var submitRequest = new XMLHttpRequest();
   submitRequest.open('POST','/qpx/form',true);
@@ -19,15 +52,19 @@
 
     for(var c = 0; c < flightCard.length; c++) {
 
-     console.log(flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].origin, ' to ',
-      flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].destination);
+     var trip = flights.body.trips.tripOption[c].pricing[0];
+     console.log('$' + trip.saleFareTotal.substring(3,6));
 
-     var airToAir = document.getElementsByClassName('air-to-air');
-     var airOrigin = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].origin;
-     var airDestination = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0].destination;
-     airToAir[c].innerHTML = airOrigin + ' to ' + airDestination;
+     var leg = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0];
+     setRoute(leg, c);
 
+     var segment = flights.body.trips.tripOption[c].slice[0].segment[0].flight;
+     setCarrier(segment, c);
 
+     var pricing = flights.body.trips.tripOPtion[c].pricing[0];
+     setPrice(pricing, c);
+
+     setTime(leg, c);
     }
    }
   });
@@ -51,4 +88,4 @@
  var searchButton = document.getElementById('flight-search');
 
  searchButton.addEventListener('click', searchFlight, false);
- searchButton.addEventListener('click', submit, false);
+ searchButton.addEventListener('click', searchData, false);
