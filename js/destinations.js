@@ -1,14 +1,14 @@
-  var popularDes = new XMLHttpRequest();
-   popularDes.open('GET', '/destinations.json', true);
-   popularDes.send(null);
+ var popularDes = new XMLHttpRequest();
+  popularDes.open('GET', '/destinations.json', true);
+  popularDes.send(null);
 
-   popularDes.onload = function() {
-    if((popularDes.status === 200) || (popularDes.status === 304)) {
+  popularDes.onload = function() {
+   if((popularDes.status === 200) || (popularDes.status === 304)) {
 
-     var desInfo = JSON.parse(popularDes.responseText);
-     var desArray = desInfo.destinations;
+    var desInfo = JSON.parse(popularDes.responseText);
+    var desArray = desInfo.destinations;
 
-     for(var l = 0; l < desArray.length; l++) {
+    for(var l = 0; l < desArray.length; l++) {
 
       var desLocation = document.getElementsByClassName('location');
       var newLocation = desArray[l].location;
@@ -22,7 +22,6 @@
       var newImage = desArray[l].image;
       desImage[l].style.background = 'url("' + newImage + '")';
       desImage[l].style.backgroundSize = 'cover';
-
-		 }
-	  }
+		}
+	 }
 	};

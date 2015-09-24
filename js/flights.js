@@ -23,18 +23,68 @@
 
  function setPrice(flight, cardNumber) {
   var airPrice = document.getElementsByClassName('price');
-  var price = flight.saleFareTotal.substring(3,6);
-  var header = document.createElement('h1');
-  airPrice[cardNumber].appendChild(header);
-  airPrice[cardNumber].textContent ='$' + price;
-  airPrice[cardNumber].style.margin = ' 0 0 20px 0';
+  var price = flight.saleFareTotal.substring(3,6).replace('.', '');
+  airPrice[cardNumber].textContent = '$' + price;
+  airPrice[cardNumber].style.margin = '20px 0 20px 0';
+  airPrice[cardNumber].style.fontSize = '32px';
  }
 
- function setTime(flight, cardNumber) {
-  var airTime = document.getElementsByClassName('air-time');
-  var departureTime = flight.departureTime;
-  var arrivalTime = flight.arrivalTime;
-  airTime[cardNumber].textContent = departureTime.substring(11,16)+ ' - ' + arrivalTime.substring(11,16);
+ function setDepTime(flight, cardNumber) {
+  var departureTime = flight.departureTime.substring(11,16);
+  var dTime = departureTime.split(':');
+  var hour = dTime[0];
+  var min = '';
+
+  if (dTime[0] > 12) {
+   hour = (dTime[0] - 12) + ':' + dTime[1] + 'pm';
+  }
+  else if (dTime[0] == 0) {
+   hour = 12 + ':' + dTime[1] + 'am';
+  }
+  else if (hour == 12) {
+   min += ':' + dTime[1] + 'pm';
+  }
+  else {
+   min += ':' + dTime[1] + 'am';
+  }
+  var airDepTime = document.getElementsByClassName('air-dep');
+  airDepTime[cardNumber].textContent = hour + min;
+ }
+
+ function setAriTime(flight, cardNumber) {
+  var arrivalTime = flight.arrivalTime.substring(11,16);
+  var aTime = arrivalTime.split(':');
+  var hour = aTime[0];
+  var min = '';
+
+  if (aTime[0]> 12) {
+   hour = (aTime[0] - 12) + ':' + aTime[1] + 'pm';
+  }
+  else if (aTime[0] == 0) {
+   hour = 12 + ':' + aTime[1] + 'am';
+  }
+  else if (hour == 12) {
+   min += ':' + aTime[1] + 'pm';
+  }
+  else {
+   min += ':' + aTime[1] + 'am';
+  }
+  var airAriTime = document.getElementsByClassName('air-ari');
+  airAriTime[cardNumber].textContent = hour + min;
+ }
+
+ function setDuration(flight, cardNumber) {
+  var airDuration = document.getElementsByClassName('air-duration');
+  var duration = flight.duration;
+  var m = duration % 60;
+  var h = (duration - m)/60;
+  airDuration[cardNumber].textContent = h.toString() + " h " + (m<10?"0":"") + m.toString() + ' min';
+ }
+
+ function setAvailability(flight, cardNumber) {
+  var airAvailable = document.getElementsByClassName('air-available');
+  var available = flight.bookingCodeCount;
+  airAvailable[cardNumber].textContent = 'Available Seats: ' + available;
  }
 
  function searchData (event) {
@@ -52,19 +102,22 @@
 
     for(var c = 0; c < flightCard.length; c++) {
 
-     var trip = flights.body.trips.tripOption[c].pricing[0];
-     console.log('$' + trip.saleFareTotal.substring(3,6));
-
      var leg = flights.body.trips.tripOption[c].slice[0].segment[0].leg[0];
      setRoute(leg, c);
+     setDepTime(leg, c);
+     setAriTime(leg, c);
 
-     var segment = flights.body.trips.tripOption[c].slice[0].segment[0].flight;
-     setCarrier(segment, c);
+     var flight = flights.body.trips.tripOption[c].slice[0].segment[0].flight;
+     setCarrier(flight, c);
 
-     var pricing = flights.body.trips.tripOPtion[c].pricing[0];
+     var pricing = flights.body.trips.tripOption[c].pricing[0];
      setPrice(pricing, c);
 
-     setTime(leg, c);
+     var slice = flights.body.trips.tripOption[c].slice[0];
+     setDuration(slice, c);
+
+     var segment = flights.body.trips.tripOption[c].slice[0].segment[0];
+     setAvailability(segment, c);
     }
    }
   });

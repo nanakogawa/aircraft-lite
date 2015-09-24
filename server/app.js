@@ -11,14 +11,16 @@
  app.use(express.static(__dirname + '/../fonts'));
  app.use(express.static(__dirname + '/../images'));
  app.use(express.static(__dirname + '/../js'));
+ app.use(express.static(__dirname + '/../json'));
+ app.use(express.static(__dirname + '/../server'));
  app.use('/qpx', qpx.api);
 
  app.get('/', function(req, res) {
  	res.sendFile(path.join(__dirname + '/../html/index.html'));
  });
 
- app.get('destinations.json', function(req, res) {
-  res.sendFile(path.join(__dirname + '/destinations.json'));
+ app.get('/destinations.json', function(req, res) {
+  res.sendFile(path.join(__dirname + '/../json/destinations.json'));
  });
 
  // Start Server
