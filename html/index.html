@@ -46,7 +46,7 @@
         <form id="search-form">
           <div class="container">
             <div class="col-md-12">
-              <h4>Search Flights</h4>
+              <h4 class="sf-title">Search Flights</h4>
             </div>
             <div class="row">
               <div class="col-sm-6 col-sm-3">
@@ -339,7 +339,52 @@
           </a>
         </div>
       </div>
-      <div id="map"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="exotic-title">
+              <h2>Let's Get Exotic</h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h4>Discover the Top 5 Most Exotic Vacation spots!</h4>
+          </div>
+        </div>
+      </div>
+      <div class="container exotic-grid">
+        <div class="row">
+          <div class="col-md-7 col-sm-6 exotic-col">
+            <div id="map"></div>
+          </div>
+          <div class="col-md-5 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button"><button type="button" class="exotic-btn btn btn-default">View Details</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="footer">
         <div class="footer-logo">
           <img src="plane-logo.png" class="plane-logo">
@@ -352,5 +397,6 @@
     <script src="flights.js"></script>
     <script src="destinations.js"></script>
     <script src="map.js"></script>
+    <script src="exotic.js"></script>
   </body>
 </html>

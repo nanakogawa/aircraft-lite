@@ -1,0 +1,49 @@
+{
+  "exotic": [
+    {
+      "exoticLocation": "Kaafu Atoll, Maldives",
+      "stay": "Coco Bodu Hithi Resort",
+      "stayPrice": "482",
+      "flightPrice": "1074",
+      "address": "Kaafu Atoll, Maldives",
+      "phoneNumber": "+960-664-112",
+      "exoticImage": "maldives.jpg"
+    },
+    {
+      "exoticLocation": "Jalousle, St. Lucia",
+      "stay": "Hotel Chocolat",
+      "stayPrice": "456",
+      "flightPrice": "1150",
+      "address": "Jalousle, St. Lucia",
+      "phoneNumber": "+1-758-457-1624",
+      "exoticImage": "lucia.jpg"
+    },
+    {
+      "exoticLocation": "Santorini, Greece",
+      "stay": "Grace Santorini Hotel & Resort",
+      "stayPrice": "495",
+      "flightPrice": "1024",
+      "address": "KImerovigli, Thera 847 00",
+      "phoneNumber": "+30-2286-021300",
+      "exoticImage": "greece.jpg"
+    },
+    {
+      "exoticLocation": "Luganville, Vanuatu",
+      "stay": "Ratua Private Island Resort",
+      "stayPrice": "289",
+      "flightPrice": "985",
+      "address": "Boite postale 396, Luganville",
+      "phoneNumber": "+960-664-112",
+      "exoticImage": "ratua.jpg"
+    },
+    {
+      "exoticLocation": "Vieques, Puerto Rico",
+      "stay": "W Retreat & Spa",
+      "stayPrice": "368",
+      "flightPrice": "495",
+      "address": "State Road 200 KM 3.2, Vieques Island",
+      "phoneNumber": "+1-787-741-4100",
+      "exoticImage": "pr.jpg"
+    }
+  ]
+}

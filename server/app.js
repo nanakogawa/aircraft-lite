@@ -23,6 +23,10 @@
   res.sendFile(path.join(__dirname + '/../json/destinations.json'));
  });
 
+ app.get('/exotic.json', function(req, res) {
+  res.sendFile(path.join(__dirname + '/../json/exotic.json'));
+ });
+
  // Start Server
  app.listen(1337);
  console.log('1337 is the magic port!');
