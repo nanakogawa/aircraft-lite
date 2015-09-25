@@ -12,33 +12,43 @@
     zoom: 2
   });
 
-  var markerOne = new google.maps.Marker({
+  var markerOne = 'marker1.png';
+  var maldivesMarker = new google.maps.Marker({
     map: map,
     position: malLatLng,
-    title: 'Kaafu Atoll, Maldives'
+    title: 'Kaafu Atoll, Maldives',
+    icon: markerOne
   });
 
-  var markerTwo = new google.maps.Marker({
+  var markerTwo = 'marker2.png';
+  var luciaMarker = new google.maps.Marker({
     map: map,
     position: lucLatLng,
-    title: 'Jalousle, St. Lucia'
+    title: 'Jalousle, St. Lucia',
+    icon: markerTwo
   });
 
-  var markerThree = new google.maps.Marker({
+  var markerThree = 'marker3.png';
+  var greeceMarker = new google.maps.Marker({
     map: map,
     position: greLatLng,
-    title: 'Santorini, Greece'
+    title: 'Santorini, Greece',
+    icon: markerThree
   });
 
-  var markerFour = new google.maps.Marker({
+  var markerFour = 'marker4.png';
+  var ratuaMarker = new google.maps.Marker({
     map: map,
     position: ratLatLng,
-    title: 'Luganville, Vanuatu'
+    title: 'Luganville, Vanuatu',
+    icon: markerFour
   });
 
-  var markerFive = new google.maps.Marker({
+  var markerFive = 'marker5.png';
+  var prMarker = new google.maps.Marker({
     map: map,
     position: vieLatLng,
-    title: 'Vieques, Puerto Rico'
+    title: 'Vieques, Puerto Rico',
+    icon: markerFive
   });
 }
