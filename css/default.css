@@ -205,25 +205,33 @@ label {
   color: #474747;
 }
 
+.exotic-articles {
+  margin: 15px 0 0 0;
+}
+
 .exotic-grid {
   width: 100%;
+}
+
+#pre-btn {
+  display: none;
 }
 
 #map {
   height: 100%;
   width: 100%;
-  padding: 0;
+}
+
+.exotic-map {
+  height: 500px;
 }
 
 .exotic-col {
-  height: 675px;
-  margin: 15px 0 50px 0;
+  height: 410px;
 }
 
 .exotic-img {
-  /*background: url('greece.jpg') no-repeat;*/
-  /*background-size: cover;*/
-  border-right: 15px solid #fff;
+  border: 2px solid #fff;
 }
 
 .exotic-description {
@@ -271,10 +279,17 @@ label {
   width: 100%;
   height: 120px;
   background: linear-gradient(to right, rgb(149, 70, 255), rgb(0, 244, 255) 100%);
+  margin: 70px 0 0 0;
 }
 
 .footer-logo {
   padding: 75px 0 0 0;
+}
+
+@media (max-width: 991px) {
+  .exotic-description {
+    padding: 1px 5px 10px 5px;
+  }
 }
 
 @media (max-width: 767px) {

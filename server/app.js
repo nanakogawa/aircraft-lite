@@ -24,7 +24,7 @@
  });
 
  app.get('/exotic.json', function(req, res) {
-  res.sendFile(path.join(__dirname + '/../json/exotic.json'));
+  res.sendFile(path.join(__dirname + '/../exotic/exotic.json'));
  });
 
  // Start Server

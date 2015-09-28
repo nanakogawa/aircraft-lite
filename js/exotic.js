@@ -1,17 +1,17 @@
- function setImage (exotics, numbers) {
+ function setExoticImage (exotics, numbers) {
   var eImage = document.getElementsByClassName('exotic-img');
   var images = exotics[numbers].exoticImage;
   eImage[numbers].style.background = 'url("' + images + '")';
   eImage[numbers].style.backgroundSize = 'cover';
  }
 
- function setLocation (exotics, numbers) {
+ function setExoticLocation (exotics, numbers) {
   var eLocation = document.getElementsByClassName('exotic-location');
   var locations = exotics[numbers].exoticLocation;
   eLocation[numbers].textContent = locations;
  }
 
- function setFlightPrice (exotics, numbers) {
+ function setExoticFlightPrice (exotics, numbers) {
   var eFlightPrice= document.getElementsByClassName('exotic-price');
   var flightPrices = exotics[numbers].flightPrice;
   eFlightPrice[numbers].textContent = '$' + flightPrices + '+';
@@ -52,9 +52,9 @@
     var exoticArray = exoticInfo.exotic;
 
     for(var e = 0; e < exoticArray.length; e++) {
-     setImage(exoticArray, e);
-     setLocation(exoticArray, e);
-     setFlightPrice(exoticArray, e);
+     setExoticImage(exoticArray, e);
+     setExoticLocation(exoticArray, e);
+     setExoticFlightPrice(exoticArray, e);
      setStay(exoticArray, e);
      setStayPrice(exoticArray, e);
      setAddress(exoticArray, e);

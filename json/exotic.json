@@ -44,6 +44,15 @@
       "address": "State Road 200 KM 3.2, Vieques Island",
       "phoneNumber": "+1-787-741-4100",
       "exoticImage": "pr.jpg"
+    },
+    {
+      "exoticLocation": "Mumbai, India",
+      "stay": "Oberoi Hotel & Spa",
+      "stayPrice": "575",
+      "flightPrice": "858",
+      "address": "Maharashtra 400021, India",
+      "phoneNumber": "+91-22-6632-5757",
+      "exoticImage": "india.jpg"
     }
   ]
 }

@@ -4,12 +4,13 @@
   var greLatLng = {lat: 36.393156, lng: 25.461509};
   var ratLatLng = {lat: -15.506433, lng: 167.200274};
   var vieLatLng = {lat: 18.126285, lng: -65.440098};
+  var indLatLng = {lat: 19.075984, lng: 72.877656};
 
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: malLatLng,
+    center: indLatLng,
     scrollwheel: false,
-    zoom: 2
+    zoom: 3
   });
 
   var markerOne = 'marker1.png';
@@ -50,5 +51,13 @@
     position: vieLatLng,
     title: 'Vieques, Puerto Rico',
     icon: markerFive
+  });
+
+  var markerSix = 'marker6.png';
+  var indiaMarker = new google.maps.Marker({
+    map: map,
+    position: indLatLng,
+    title: 'Mumbai, India',
+    icon: markerSix
   });
 }
