@@ -21,7 +21,7 @@
   });
  }
 
- function setPrice(flight, cardNumber) {
+ function setFlightPrice(flight, cardNumber) {
   var airPrice = document.getElementsByClassName('price');
   var price = flight.saleFareTotal.substring(3,6).replace('.', '');
   airPrice[cardNumber].textContent = '$' + price;
@@ -111,7 +111,7 @@
      setCarrier(flight, c);
 
      var pricing = flights.body.trips.tripOption[c].pricing[0];
-     setPrice(pricing, c);
+     setFlightPrice(pricing, c);
 
      var slice = flights.body.trips.tripOption[c].slice[0];
      setDuration(slice, c);
