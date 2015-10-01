@@ -1,6 +1,6 @@
  // Dependencies
- var request = require('request'),
-     express = require('express'),
+ var express = require('express'),
+     request = require('request'),
      path = require('path'),
      qpx = require('./qpx.js');
 
@@ -12,7 +12,6 @@
  app.use(express.static(__dirname + '/../images'));
  app.use(express.static(__dirname + '/../js'));
  app.use(express.static(__dirname + '/../json'));
- app.use(express.static(__dirname + '/../server'));
  app.use('/qpx', qpx.api);
 
  app.get('/', function(req, res) {
@@ -24,7 +23,7 @@
  });
 
  app.get('/exotic.json', function(req, res) {
-  res.sendFile(path.join(__dirname + '/../exotic/exotic.json'));
+  res.sendFile(path.join(__dirname + '/../json/exotic.json'));
  });
 
  // Start Server

@@ -1,6 +1,9 @@
  var gulp = require('gulp'),
      nodemon = require('gulp-nodemon'),
-     mocha = require('gulp-mocha');
+     mocha = require('gulp-mocha'),
+     uglify = require('gulp-uglify'),
+     minifyHTML = require('gulp-minify-html'),
+     minifyCSS = require('gulp-minify-css');
 
  gulp.task('nodemon', function() {
   nodemon({
@@ -10,11 +13,11 @@
   .on('stop', function() {
    console.log('Stop Event Fired')
   })
-  .on('start', function() {
+  .on('start', ['compress'], ['minify-html'], ['minify-css'], ['test'], function() {
    console.log('Start Event Fired')
   })
   .on('restart', function() {
-   console.log('Restart Event Fired');
+   console.log('Restart Event Fired')
   });
  });
 
@@ -23,4 +26,27 @@
    .pipe(mocha());
  });
 
- gulp.task('default', ['nodemon', 'test']);
+ gulp.task('compress', function() {
+  return gulp.src('../js/*.js')
+   .pipe(uglify())
+   .pipe(gulp.dest('../public/dist'))
+ });
+
+ gulp.task('minify-html', function() {
+  var opts = {
+   conditionals: true,
+   spare: true
+  };
+
+  return gulp.src('../html/*.html')
+   .pipe(minifyHTML(opts))
+   .pipe(gulp.dest('../public/dist'))
+ });
+
+ gulp.task('minify-css', function() {
+  return gulp.src('../css/*.css')
+   .pipe(minifyCSS({compatibility: 'ie8'}))
+   .pipe(gulp.dest('../public/dist'));
+ });
+
+ gulp.task('default', ['nodemon']);
