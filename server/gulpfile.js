@@ -5,7 +5,7 @@
      minifyHTML = require('gulp-minify-html'),
      minifyCSS = require('gulp-minify-css'),
      imagemin = require('gulp-imagemin'),
-     pngquant = require('imagemin-pngquant');
+     browserSync = require('browser-sync').create();
 
  gulp.task('nodemon', function() {
   nodemon({
@@ -15,16 +15,15 @@
   .on('stop', function() {
    console.log('Stop Event Fired')
   })
-  .on('start', ['compress'], ['minify-html'], ['minify-css'], ['minify-img'], ['test'], function() {
+  .on('start', function() {
    console.log('Start Event Fired')
   })
   .on('restart', function() {
    console.log('Restart Event Fired')
   });
- });
 
  gulp.task('test', function() {
-  return gulp.src('test.js', {read: false})
+  return gulp.src('test.js')
    .pipe(mocha());
  });
 
@@ -55,10 +54,18 @@
   return gulp.src('../images/*')
    .pipe(imagemin({
     progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
-    use: [pngquant()]
+    svgoPlugins: [{removeViewBox: false}]
    }))
    .pipe(gulp.dest('../public/dist/images'));
+ });
+
+ gulp.task('browser-sync', function(){
+  browserSync.init({
+   server: {
+    baseDir: './'
+   }
+  });
+ });
  });
 
  gulp.task('default', ['nodemon']);
