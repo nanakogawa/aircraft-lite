@@ -3,7 +3,9 @@
      mocha = require('gulp-mocha'),
      uglify = require('gulp-uglify'),
      minifyHTML = require('gulp-minify-html'),
-     minifyCSS = require('gulp-minify-css');
+     minifyCSS = require('gulp-minify-css'),
+     imagemin = require('gulp-imagemin'),
+     pngquant = require('imagemin-pngquant');
 
  gulp.task('nodemon', function() {
   nodemon({
@@ -13,7 +15,7 @@
   .on('stop', function() {
    console.log('Stop Event Fired')
   })
-  .on('start', ['compress'], ['minify-html'], ['minify-css'], ['test'], function() {
+  .on('start', ['compress'], ['minify-html'], ['minify-css'], ['minify-img'], ['test'], function() {
    console.log('Start Event Fired')
   })
   .on('restart', function() {
@@ -47,6 +49,16 @@
   return gulp.src('../css/*.css')
    .pipe(minifyCSS({compatibility: 'ie8'}))
    .pipe(gulp.dest('../public/dist'));
+ });
+
+ gulp.task('minify-img', function() {
+  return gulp.src('../images/*')
+   .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViewBox: false}],
+    use: [pngquant()]
+   }))
+   .pipe(gulp.dest('../public/dist/images'));
  });
 
  gulp.task('default', ['nodemon']);
