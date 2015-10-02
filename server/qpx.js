@@ -1,7 +1,7 @@
  // Dependencies
  var express = require('express'),
-   request = require('request'),
-   bodyParser = require('body-parser');
+     request = require('request'),
+     bodyParser = require('body-parser');
 
  // Body Parser
  var jsonParser = bodyParser.json();
@@ -37,7 +37,7 @@
   request({
    method: 'POST',
    url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?' +
-    'key=AIzaSyCww-Th87gchTpUwFDuZfgte6HtuY9LPVM',
+    'key=AIzaSyAlqfXUkrgIw6JvIrTtezz3zozHPJMwscc',
    json: true,
    body: search
   }, function(error, data) {

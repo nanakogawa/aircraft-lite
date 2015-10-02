@@ -1,0 +1,19 @@
+{
+  "name": "aircraftlite",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nanakogawa/aircraftlite",
+  "authors": [
+    "nana kogawa <kogawanana@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

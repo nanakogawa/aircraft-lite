@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aircraft Lite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="semantic.css">
+    </head>
+  <body>
+    <center>
+      <div class="cover-background ">
+        <nav class="navbar navbar-trans">
+          <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+              </button>
+              <button type="button" class="navbar-toggle collapsed plane-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                <img src="plane-logo.png" class="plane-logo">
+              </button>
+              <a class="navbar-brand collapse navbar-collapse id='bs-example-navbar-collapse-2'" href="#">Aircraft Lite</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" class="navbar-tab">Airfare</a></li>
+                <li><a href="#" class="navbar-tab">Support</a></li>
+                <li><a href="#" class="navbar-tab">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="cover-title">
+            <div class="col-md-12">
+              <h2>Flight with Leisure</h2>
+            </div>
+          </div>
+        </div>
+        <!--form starts -->
+        <form id="search-form">
+          <div class="container">
+            <div class="col-md-12">
+              <h4 class="sf-title">Search Flights</h4>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-sm-3">
+                <select class="form-control" id="flightWay">
+                  <option value="one-way">One Way</option>
+                  <option value="round-trip">Round Trip</option>
+                  <option value="multi-city">Multi-City</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-sm-3">
+                <select class="form-control" id="flightClass">
+                  <option value="economic">Economic Class</option>
+                  <option value="premium">Premium Class</option>
+                  <option value="business">Business Class</option>
+                  <option value="first-class">First Class</option>
+                </select>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <div class="form-group form-inline">
+                  <label for="selectAdult">Adult (18+)</label>
+                  <select class="form-control" id="selectAdult">
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <div class="form-group form-inline">
+                  <label for="selectChild">Child (0-17)</label>
+                  <select class="form-control" id="selectChild">
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
+                <label for="flyingFrom">Flying From</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
+                  <input type="text" class="form-control" id="flyingFrom" placeholder="Airport">
+                </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
+                <label for="flyingTo">Flying To</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-map-marker"></div></div>
+                  <input type="text" class="form-control" id="flyingTo" placeholder="Airport">
+                </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
+                <label for="departing">Departing</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
+                  <input type="text" class="form-control" id="departing" placeholder="YYYY-MM-DD">
+                </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+              <div class="form-group form-inline">
+                <label for="returning">Returning</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><div class="glyphicon glyphicon-calendar"></div></div>
+                  <input type="text" class="form-control" id="returning" placeholder="YYYY-MM-DD">
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-m-12">
+                <button type="submit" class="btn btn-default" id="flight-search">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- form ends -->
+        <!-- flight cards start -->
+        <div class="flight-cards" id="flight-cards">
+          <div class="container flight-card-grid">
+            <div class="row">
+              <!-- card 1 -->
+              <div class="col-lg-2 col-lg-offset-1 col-sm-6">
+                <div class="flight-card">
+                  <div class="ui link cards">
+                    <div class="card">
+                      <div class="image"></div>
+                      <div class="content">
+                        <div class="description air-to-air"></div>
+                        <div class="header air-carrier"></div>
+                        <div class="price"></div>
+                        <div class="description">
+                          <span class="air-dep"></span> - <span class="air-ari"></span>
+                          <div class="air-duration"></div><br/>
+                          <div class="air-available"></div>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button type="submit" class="btn btn-default book-button">Book</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 2 -->
+              <div class="col-lg-2 col-sm-6">
+                <div class="flight-card">
+                  <div class="ui link cards">
+                    <div class="card">
+                      <div class="image"></div>
+                      <div class="content">
+                        <div class="description air-to-air"></div>
+                        <div class="header air-carrier"></div>
+                        <div class="price"></div>
+                        <div class="description">
+                          <span class="air-dep"></span> - <span class="air-ari"></span>
+                          <div class="air-duration"></div><br/>
+                          <div class="air-available"></div>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button type="submit" class="btn btn-default book-button">Book</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 3 -->
+              <div class="col-lg-2 col-sm-6">
+                <div class="flight-card">
+                  <div class="ui link cards">
+                    <div class="card">
+                      <div class="image"></div>
+                      <div class="content">
+                        <div class="description air-to-air"></div>
+                        <div class="header air-carrier"></div>
+                        <div class="price"></div>
+                        <div class="description">
+                          <span class="air-dep"></span> - <span class="air-ari"></span>
+                          <div class="air-duration"></div><br/>
+                          <div class="air-available"></div>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button type="submit" class="btn btn-default book-button">Book</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 4 -->
+              <div class="col-lg-2 col-sm-6">
+                <div class="flight-card">
+                  <div class="ui link cards">
+                    <div class="card">
+                      <div class="image"></div>
+                      <div class="content">
+                        <div class="description air-to-air"></div>
+                        <div class="header air-carrier"></div>
+                        <div class="price"></div>
+                        <div class="description">
+                          <span class="air-dep"></span> - <span class="air-ari"></span>
+                          <div class="air-duration"></div><br/>
+                          <div class="air-available"></div>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button type="submit" class="btn btn-default book-button">Book</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 5 -->
+              <div class="col-lg-2 col-sm-6">
+                <div class="flight-card">
+                  <div class="ui link cards">
+                    <div class="card">
+                      <div class="image"></div>
+                      <div class="content">
+                        <div class="description air-to-air"></div>
+                        <div class="header air-carrier"></div>
+                        <div class="price"></div>
+                        <div class="description">
+                          <span class="air-dep"></span> - <span class="air-ari"></span>
+                          <div class="air-duration"></div><br/>
+                          <div class="air-available"></div>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button type="submit" class="btn btn-default book-button">Book</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- card 5 end -->
+              </div> <!-- column end -->
+            </div> <!-- row end -->
+          </div> <!-- container end -->
+        </div> <!-- flight cards end -->
+      </div> <!-- gradient background end -->
+      <div class="container">
+        <div class="pd-title">
+          <div class="row">
+            <h2>Popular Destinations</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container pd-grid">
+        <div class="row">
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <a href="#">
+            <div class="col-md-2 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-3 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-4 col-sm-3 pop-des">
+              <div class="des-opacity">
+                <div class="location"></div>
+                <div class="cost"></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="exotic-title">
+              <h2>Let's Get Exotic</h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h4>Discover the Top 6 Most Exotic Vacation spots!</h4>
+          </div>
+        </div>
+      </div>
+      <div class="container exotic-grid">
+        <div class="row">
+          <div class="col-md-12 exotic-map">
+            <div id="map"></div>
+          </div>
+        </div>
+        <div class="exotic-articles">
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>1.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>2.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>3.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>4.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>5.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 exotic-col exotic-img">
+            <div class="col-md-12 exotic-description">
+              <div class="exotic-locations">
+                <h3>6.
+                  <span class="exotic-location"></span>
+                  <img src="plane-logo.png" class="plane-logo-exotic">
+                  <span class="exotic-price"></span>
+                </h3>
+              </div>
+              <div class="exotic-stays-info">
+                <span class="exotic-stay"></span>
+                <span class="booking">Book from
+                  <span class="exotic-booking"></span>
+                </span>
+              </div>
+              <div class="glyphicon glyphicon-map-marker"></div>
+              <span class="description">
+                <span class="exotic-address"></span><br/>
+              </span>
+              <div class="glyphicon glyphicon-earphone"></div>
+              <span class="description">
+                <span class="exotic-number"></span>
+              </span>
+              <span class="exotic-button">
+                <button type="button" class="exotic-btn btn btn-default">View Details</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="plane-logo.png" class="plane-logo">
+        </div>
+      </div>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1hsULBi75yJ7ZqaMPMOBzI5nswHeU_Og&callback=initMap"></script>
+    <script src="flights.js"></script>
+    <script src="destinations.js"></script>
+    <script src="map.js"></script>
+    <script src="exotic.js"></script>
+  </body>
+</html>

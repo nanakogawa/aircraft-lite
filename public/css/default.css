@@ -1,0 +1,326 @@
+@font-face {
+  font-family: 'helvetica-neue-thin';
+  src: url('helvetica-neue-thin.otf');
+}
+
+@font-face {
+  font-family: 'helvetica-neue-ultra-thin2';
+  src: url('helvetica-neue-ultra-thin2.otf');
+}
+
+body {
+  font-family: helvetica-neue-ultra-thin2, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+a:hover {
+  color: rgb(192, 192, 192);
+}
+
+.cover {
+ width: 100%;
+}
+
+.cover-background {
+ width: 100%;
+ height: 100%;
+ padding: 0 0 50px 0;
+ background: linear-gradient(to bottom, rgb(149, 70, 255), rgb(0, 244, 255) 100%);
+ box-shadow: none;
+}
+
+.navbar {
+  width: 96%;
+}
+
+.navbar-brand {
+  font-size: 22px;
+}
+
+.plane-logo {
+  height: 22px;
+}
+
+.navbar-tab {
+  font-size: 20px;
+}
+
+.navbar-brand,
+.navbar-tab {
+  color: #fff;
+  margin: 20px 0 0 0;
+}
+
+.navbar-toggle {
+ color: #fff;
+}
+
+.plane-button {
+  float: left;
+}
+
+.cover-title {
+  color: #fff;
+  margin: -38px 0 0 0;
+}
+
+.cover-text {
+  color: #fff;
+}
+
+form {
+  color: #fff;
+  width: 96%;
+  height: 100%;
+  z-index: 100;
+  padding: 0 0 13px 0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+h4.sf-title {
+  font-weight: bold;
+  font-family: helvetica-neue-thin, sans-serif;
+}
+
+label {
+  font-size: 12px;
+  font-family: helvetica-neue-thin, sans-serif;
+  font-weight: bolder;
+}
+
+#flightWay {
+  width: 140px;
+  padding: 6px 0 6px 0;
+  margin: 11px 0 0 0;
+}
+
+#flightClass {
+  width: 140px;
+  margin: 10px 0 0 0;
+}
+
+#flyingFrom,
+#flyingTo {
+  width: 120px;
+}
+
+#selectAdult,
+#selectChild {
+  width: 55px;
+  margin: 5px 0;
+}
+
+#departing,
+#returning {
+  width: 130px;
+}
+
+#flight-search {
+  width: 100px;
+  margin: 5px 0 0 0;
+}
+
+/*-- flight cards --*/
+
+.flight-card-grid {
+  width: 100%;
+}
+
+.flight-cards {
+  display: none;
+}
+
+.flight-card {
+  margin: 23px 0 0 0;
+}
+
+.image {
+  height: 30px;
+  padding: 5px 0 !important;
+}
+
+.description {
+  font-size: 15px;
+}
+
+.header {
+  font-family: helvetica-neue-thin, sans-serif !important;
+  padding: 15px 0 0 0;
+}
+
+.price {
+  margin: 0 0 20px 0;
+}
+
+.book-button {
+  width: 80px;
+}
+
+/*-- Popular Destinations --*/
+
+.pd-grid {
+  width: 100%;
+}
+
+.pd-title,
+.pd-title.h2 {
+  font-family: helvetica-neue-thin, sans-serif;
+  text-align: left;
+  color: #474747;
+  margin: 0 0 10px 0;
+}
+
+.pop-des {
+  height: 250px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.des-opacity {
+  color: #fff;
+  z-index: 0;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.67);
+  position: relative;
+  text-align: left;
+  top: 87%;
+}
+
+.location {
+  z-index: 100;
+  position: absolute;
+  padding: 5px 15px;
+}
+
+.cost {
+  z-index: 100;
+  float: right !important;
+  padding: 5px 15px;
+}
+
+.exotic-title {
+  font-family: helvetica-neue-thin, sans-serif;
+  color: #474747;
+}
+
+.exotic-articles {
+  margin: 15px 0 0 0;
+}
+
+.exotic-grid {
+  width: 100%;
+}
+
+#pre-btn {
+  display: none;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.exotic-map {
+  height: 500px;
+}
+
+.exotic-col {
+  height: 410px;
+}
+
+.exotic-img {
+  border: 2px solid #fff;
+}
+
+.exotic-description {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.plane-logo-exotic {
+  height: 21px;
+}
+
+.exotic-button {
+  float: right;
+}
+
+.exotic-btn {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
+  margin: -5px 0 10px 0;
+  font-size: 15px;
+}
+
+.exotic-stays-info {
+  margin: -5px 0 0 0;
+  font-weight: bold;
+}
+
+.exotic-cost {
+  float: right !important;
+}
+
+.exotic-booking {
+  font-weight: bold;
+}
+
+.booking {
+  float: right;
+  font-weight: normal;
+}
+
+.footer {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to right, rgb(149, 70, 255), rgb(0, 244, 255) 100%);
+  margin: 70px 0 0 0;
+}
+
+.footer-logo {
+  padding: 75px 0 0 0;
+}
+
+@media (max-width: 991px) {
+  .exotic-description {
+    padding: 1px 5px 10px 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .flight-card {
+    margin: 20px 0 0 200px;
+  }
+}
+
+@media (max-width: 650px) {
+  .flight-card {
+    margin: 20px 0 0 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .flight-card {
+    margin: 20px 0 0 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flight-card {
+    margin: 20px 0 0 70px;
+  }
+}
+
+@media (max-width: 420px) {
+  form {
+    width: 100%;
+  }
+  .flight-card {
+    margin: 20px 0 0 40px;
+  }
+}
