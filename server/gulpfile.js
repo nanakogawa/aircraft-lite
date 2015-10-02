@@ -21,6 +21,7 @@
   .on('restart', function() {
    console.log('Restart Event Fired')
   });
+ });
 
  gulp.task('test', function() {
   return gulp.src('test.js')
@@ -61,11 +62,9 @@
 
  gulp.task('browser-sync', function(){
   browserSync.init({
-   server: {
-    baseDir: './'
-   }
+   proxy: 'localhost:1337'
   });
  });
- });
 
- gulp.task('default', ['nodemon']);
+
+ gulp.task('default', ['nodemon', 'browser-sync']);
